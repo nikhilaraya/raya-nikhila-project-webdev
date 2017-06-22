@@ -1,0 +1,94 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-text pull-left">
+            <a class="white-hyperlinks" href="#/user/{{model.userId}}">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+        </div>
+        <div class="navbar-text pull-right">
+            <a class="white-hyperlinks" href="#/user/{{model.userId}}/website/new">
+                <span class="glyphicon glyphicon-plus"></span>
+            </a>
+        </div>
+        <div>
+            <a class="navbar-brand" href="#/moviedefault">Websites</a>
+        </div>
+    </div>
+</nav>
+<!--nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button"
+                    class="navbar-toggle collapsed"
+                    data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a  href="#/moviedefault" class="navbar-brand" rel="home" >
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="navbar-text pull-right">
+                <a class="mycustomfont" href="#/moviedefault">
+                    <span class="glyphicon glyphicon-home"> </span>
+                </a>
+            </ul>
+        </div>
+    </div>
+</nav-->
+
+<div class="container">
+    <div class="register-margin"></div>
+    <div class="col-md-2"></div>
+    <div class="col-xs-12 col-md-8">
+        <div class="input-group">
+            <input ng-model = "model.movieName"
+                   type="text"
+                   placeholder="Search movie.."
+                   class="form-control ng-pristine ng-valid ng-touched">
+            <span class="input-group-btn ">
+                   <a href ="#/search/{{model.movieName}}"
+                      class="btn btn-info makegray"
+                      type="button">
+                       <span class="glyphicon glyphicon-search"></span>
+                   </a>
+                </span>
+        </div>
+        <div class="register-margin"></div>
+
+                <a class="btn btn-success btn-block btn-color"
+                   href="#/manageusers">Manage Users
+                </a>
+
+                <a class="btn btn-success btn-block btn-color"
+                   href="#/manageflaggedreviews">Manage Flagged Reviews
+                </a>
+
+                <a class="btn btn-success btn-block btn-color"
+                   href="#/managemovies">Manage Ratings and Reviews
+                </a>
+
+
+        </div>
+    </div>
+
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+    <div class="container-fluid">
+        <p class="navbar-text pull-left">
+            <a class="mycustomfont" ng-click="model.logout()">
+                <span class="glyphicon glyphicon-off"></span></a>
+        </p>
+        <p class="navbar-text pull-right">
+            <a class="mycustomfont" href="#/profile">
+                <span class="glyphicon glyphicon-user"></span>
+            </a>
+
+        </p>
+
+    </div>
+</nav>

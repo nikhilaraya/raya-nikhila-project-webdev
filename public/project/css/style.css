@@ -1,0 +1,177 @@
+input.form-control,
+textarea.form-control,
+select.form-control {
+    margin-bottom: 5px;
+}
+
+.btn-margin-bottom{
+    margin-bottom: 5px;
+}
+.align-center-style{
+    text-align: center;
+}
+.set-glyphicon-margin{
+    margin-right:5px;
+}
+.set-login-margin{
+    margin-right:10px;
+}
+.white-hyperlinks{
+    text-decoration: none;
+}
+.a-tag-black{
+    color:black;
+}
+body {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    font-family: 'PT Sans Caption', Helvetica, Arial, sans-serif;
+}
+.buttoncolor-admin{
+    color: black;
+    font-weight: bold;
+    border-color: #fed136 !important;
+    background-color: #fed136 !important;
+}
+.buttoncolor-adminbtn{
+    color: #fed136;
+    font-weight: bold;
+    border-color: black !important;
+    background-color: black !important;
+}
+.headingStyle{
+    color: #fed136 !important;
+    font-size: xx-large;
+    font-weight: bolder;
+    font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive !important;
+}
+.headingStyleInBlack{
+    font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive !important;
+}
+.color-heading{
+    background-color: #fed136 !important;
+}
+.toolbar-width{
+    width:97%;
+}
+.container-fluid>.navbar-header{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+a:hover{
+    text-decoration: none;
+}
+
+.fixed-top-header-arrow{
+    font-size: 12px;
+    padding-left: 0px;
+    padding-right: 15px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.fixed-top-header{
+    padding-left: 0px;
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
+    color: white;
+}
+.padding-left-header{
+    padding-left: 15px !important;
+}
+.remove-hover-heading{
+    color: white !important;
+}
+.glyphicon-color{
+    color: white;
+}
+.adjust-padding-header{
+    padding-left: 0px;
+}
+
+.navbar-default .navbar-link:hover {
+    color: white ;
+}
+.active {
+    background-color: black !important;
+}
+.footer-width{
+    width: 100%;
+}
+.navbar-default {
+    background-color: black;
+    border-color: black;
+}
+
+
+.navbar-default .navbar-brand {
+    color: white;
+}
+
+.navbar-header {
+    width: 100%;
+}
+
+.navbar-default .navbar-link {
+    color: white;
+}
+
+.navbar.navbar-default a {
+    color: #ffffff;
+}
+
+.wd-widget {
+    margin-bottom: 10px;
+}
+
+.wd-widget > img {
+    width: 100%;
+}
+
+.wd-widget .wd-widget-toolbar {
+    position: absolute;
+    right: 15px;
+    background: white;
+    opacity: 0.9;
+    padding: 5px;
+    border-bottom-left-radius: 10px;
+}
+
+.toolbar-youtube-position{
+    top: 0px;
+    right: 0px !important;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.btn-color{
+    background: black !important;
+    border-color: black !important;
+}
+.login-margin{
+    margin-top: 50px;
+}
+.register-margin{
+    margin-top: 25px;
+}
+@media only screen and (max-width: 768px) {
+    .padding-left-header{
+        padding-left: 0px !important;
+    }
+}
