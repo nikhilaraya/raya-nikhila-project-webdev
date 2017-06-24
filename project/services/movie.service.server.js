@@ -133,17 +133,19 @@ function doNotRemoveReview(req,res) {
 }
 
 function updateMovie(req,res) {
+    console.log("hiiii");
     var tmdbId = req.params.tmdbId;
     var reviews = req.body;
     var userId = reviews.userId;
     var text = reviews.text;
-    var visible = reviews.flagged;
+    var visible = reviews.visible;
+    var flagged = reviews.flagged;
     movieModel
         .findMovieById(tmdbId)
         .then(function (movie) {
             var retrieveMovie = movie[0];
             var reviews = retrieveMovie.reviews;
-
+            console.log("hiiiii---"+visible+tmdbId);
             for(var i in reviews){
                 if(reviews[i].userId == userId){
                     reviews[i].visible = visible;

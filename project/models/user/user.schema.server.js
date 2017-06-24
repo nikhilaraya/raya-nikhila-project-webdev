@@ -10,6 +10,7 @@ var userSchema = mongoose.Schema({
     lastName: String,
     email: String,
     admin: String,
+    critic: { type: String, default: "false"},
     //role: {type: String,default: 'User', enum:['Admin','User']},
     // user can give ratings and reviews to many movies hence they should be an array
     rates: [

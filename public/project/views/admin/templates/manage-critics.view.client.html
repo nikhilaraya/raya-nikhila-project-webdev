@@ -12,7 +12,7 @@
             </a>
         </div>
         <div>
-            <a class="navbar-brand headingStyle" href="#/moviedefault">Manage Users</a>
+            <a class="navbar-brand headingStyle" href="#/moviedefault">Manage Critics</a>
         </div>
     </div>
 </nav>
@@ -84,19 +84,16 @@
                 </div>
 
                 <div class="col-md-3 col-sm-12 col-xs-12 paddedfromtop3">
-                    <select type="string"
-                            class="form-control"
-                            ng-model="model.admin">
-                        <option value="" disabled selected hidden><i>Select Role Type</i></option>
-                        <option value="true">Admin</option>
-                        <option value="false">User</option>
-                    </select>
+                    <input type="email"
+                           class="form-control"
+                           placeholder="email"
+                           ng-model="model.email"/>
                 </div>
 
                 <div class="col-md-3 col-sm-12 col-xs-12 paddedfromtop3">
 
-                    <a ng-click="model.createUser(model.username, model.password, model.admin)"
-                       class="btn btn-block btn-success btn-color">Create User
+                    <a ng-click="model.createCritic(model.username, model.password, model.email)"
+                       class="btn btn-block btn-success btn-color">Create Critic
                     </a>
 
                 </div>
@@ -126,14 +123,7 @@
                     </td>
                     <td> {{user.firstName}}</td>
                     <td> {{user.lastName}}</td>
-                    <td>
-                        <a ng-if="user.admin=='true'"class="a-tag-black">
-                            Admin
-                        </a>
-
-                        <a ng-if="user.admin=='false'"class="a-tag-black">
-                            User
-                        </a>
+                    <td> Critic
                     </td>
                 </tr>
                 </tbody>
@@ -182,11 +172,11 @@
 
                     <td>
                         <a class="fa fa-check-square fa-lg a-tag-black"
-                           ng-click="model.updateUser(user._id, user)"></a>
+                           ng-click="model.updateCritic(user._id, user)"></a>
                     </td>
 
                     <td><a class="fa fa-user-times fa-lg a-tag-black"
-                           ng-click="model.deleteUser(user._id)"></a>
+                           ng-click="model.deleteCritic(user._id)"></a>
                     </td>
 
 

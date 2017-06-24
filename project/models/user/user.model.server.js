@@ -13,6 +13,7 @@ var q = require('q');
     userModel.findUserByUsername = findUserByUsername;
     userModel.findUserByCredentials = findUserByCredentials;
     userModel.findAllUsers = findAllUsers;
+    userModel.findAllCritics = findAllCritics;
     userModel.updateUser = updateUser;
     userModel.updateRatingAndReview = updateRatingAndReview;
     userModel.deleteUser = deleteUser;
@@ -23,11 +24,15 @@ var q = require('q');
 module.exports = userModel;
 
 function findUserByFacebookId(facebookId) {
-    return User.findOne({'facebook.id': facebookId});
+    return userModel.findOne({'facebook.id': facebookId});
 }
 
 function findAllUsers() {
-    return userModel.find();
+    return userModel.find({critic: false});
+}
+
+function findAllCritics() {
+    return userModel.find({critic: true});
 }
 
 function findUserById(userId) {

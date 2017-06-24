@@ -9,26 +9,34 @@ passport.use(new LocalStrategy(localStrategy));
 passport.serializeUser(serializeUser);
 passport.deserializeUser(deserializeUser);
 var bcrypt = require("bcrypt-nodejs");
-var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-//var FacebookStrategy = require('passport-facebook').Strategy;
+//var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+var FacebookStrategy = require('passport-facebook').Strategy;
 
-var googleConfig = {
+
+/*var googleConfig = {
     clientID     : '909983813107-a8uki3pkeajhcff653k1jes0v0an53oe.apps.googleusercontent.com',
     clientSecret : '8nht77_nJzPDqZUgjulcCJub',
     callbackURL  : 'http://localhost:3000/auth/google/callback'
-};
+};*/
 
 /*var googleConfig = {
     clientID     : process.env.GOOGLE_CLIENT_ID,
     clientSecret : process.env.GOOGLE_CLIENT_SECRET,
     callbackURL  : process.env.GOOGLE_CALLBACK_URL
 };
-
-var facebookConfig = {
+*/
+/*var facebookConfig = {
     clientID     : process.env.FACEBOOK_CLIENT_ID,
     clientSecret : process.env.FACEBOOK_CLIENT_SECRET,
     callbackURL  : process.env.FACEBOOK_CALLBACK_URL
 };*/
+
+var facebookConfig = {
+    clientID     : '570649636657678',
+    clientSecret : 'ebe2e1005a52b79155e84068c22a8abe',
+    callbackURL  : 'http://localhost:3000/auth/facebook/callback'
+};
+
 app.post("/api/project/register", register);
 app.get("/api/project/user/:userId", findUserById);
 app.delete("/api/project/user/:userId",deleteUser);
@@ -36,24 +44,54 @@ app.put("/api/project/user/:userId",updateUser);
 app.get("/api/project/user",getParticularUser);
 app.post("/api/project/logout", logout);
 app.get('/api/project/findAllUsers',findAllUsers);
+app.get('/api/project/findAllCritics',findAllCritics);
 app.post("/api/project/user",createUser);
 app.put("/api/project/:userId/rateAndReview", updateRatingAndReview);
 app.put("/api/project/user/follows/:userId",followUser);
 app.put("/api/project/user/:userId/unfollows/:username",unfollowUser);
 app.post("/api/project/login", passport.authenticate('local'), login);
 app.get("/api/project/loggedIn",loggedIn);
-//app.get('/auth/facebook', passport.authenticate('facebook', { scope : ['email'] }));
-app.get('/auth/google', passport.authenticate('google', { scope : ['profile', 'email'] }));
+app.get('/auth/facebook', passport.authenticate('facebook', { scope : ['email'] }));
+/*app.get('/auth/google', passport.authenticate('google', { scope : ['profile', 'email'] }));
 app.get('/auth/google/callback',
     passport.authenticate('google', {
         successRedirect: '/project/#!/profile',
         failureRedirect: '/project/#!/login'
-    }));
-/*app.get('/auth/facebook/callback',
+    }));*/
+app.get('/auth/facebook/callback',
     passport.authenticate('facebook', {
         successRedirect: '/project/#/profile',
         failureRedirect: '/project/#/login'
-    }));*/
+    }));
+
+passport.use(new FacebookStrategy(facebookConfig, facebookStrategy));
+function facebookStrategy(token, refreshToken, profile, done) {
+
+    userModel
+        .findUserByFacebookId(profile.id)
+        .then(function (user) {
+            if (user) {
+                return done(null, user);
+            } else {
+                var newUser = {
+                    username: profile.displayName.replace(/ /g, ""),
+                    facebook: {
+                        token: token,
+                        id: profile.id
+                    }
+                };
+                userModel
+                    .createUser(newUser)
+                    .then(function (user) {
+                        return done(null, user);
+                    }, function (err) {
+                        return done(err, null);
+                    });
+            }
+        }, function (err) {
+            return done(err, null);
+        });
+}
 
 function logout(req,res) {
     req.logout();
@@ -150,6 +188,19 @@ function findUserByUsername(username,req,res) {
 function findAllUsers(req,res){
     userModel
         .findAllUsers()
+        .then(
+            function (users) {
+                res.json(users);
+            },
+            function (error) {
+                res.sendStatus(404);
+            }
+        );
+}
+
+function findAllCritics(req,res){
+    userModel
+        .findAllCritics()
         .then(
             function (users) {
                 res.json(users);
@@ -345,4 +396,11 @@ function createUser(req,res) {
                 res.sendStatus(400)
             }
         );
+}
+function authorized(req, res, next) {
+    if (!req.isAuthenticated()) {
+        res.sendStatus(401);
+    } else {
+        next();
+    }
 }

@@ -16,6 +16,9 @@
         </div>
     </div>
 </nav>
+
+
+
 <!-- Header -->
 <!--nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
@@ -49,7 +52,7 @@
 
 
 <!--Body-->
-<div class="container-fluid pushdown">
+<div class="container-fluid pushdown adjustPaddingForHeader">
     <div class="input-group">
         <input ng-model = "model.movieName"
                type="text"
@@ -67,18 +70,26 @@
 
 
 
-    <h3 ><b>{{model.movie.title}} ({{model.movie.release_date  | date: 'yyyy'}})</b></h3>
 
-    <div class="row">
-        <div class="col-sm-3">
+<p></p>
+    <img class="img-responsive" ng-src="https://image.tmdb.org/t/p/original/{{model.movie.backdrop_path}}">
+        <p></p>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <span class="label label-default pull-left">Release: {{model.movie.release_date}}</span>
+            <h1>
+                {{model.movie.title}}
+            </h1>
 
-            <div class="fill">
-                <img class="img paddingtop20" ng-src="https://image.tmdb.org/t/p/w300/{{model.movie.poster_path}}">
+            <div class="caption">
+            <span class="h5 text-muted" ng-repeat="genre in model.movie.genres">
+            {{"#" + genre.name + " "}}
+        </span>
             </div>
 
-        </div>
-
-        <p></p>
+            <i class="fa fa-clock-o" aria-hidden="true">
+                {{model.movie.runtime + " mins"}}
+            </i>
 
         <div class="col-sm-9">
             <h3 class="page-header"><b>Summary</b></h3>
@@ -96,10 +107,6 @@
             </h5>  </ul>
         </div>
     </div>
-
-
-    <p></p>
-
 
     <div class="row">
         <div class="col-xs-6">

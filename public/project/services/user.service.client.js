@@ -18,9 +18,15 @@
             logout:logout,
             findUserByUsername: findUserByUsername,
             submitRatingReview: submitRatingReview,
-            findAllUsers: findAllUsers
+            findAllUsers: findAllUsers,
+            findAllCritics: findAllCritics
         };
         return api;
+
+        function findAllCritics() {
+            var url = "/api/project/findAllCritics";
+            return $http.get(url);
+        }
 
         function submitRatingReview(userId,rateAndReview) {
             var url = "/api/project/"+userId+"/rateAndReview";

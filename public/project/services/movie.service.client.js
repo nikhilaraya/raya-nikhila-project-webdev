@@ -51,6 +51,7 @@
         }
 
         function updateMovie(tmdbId,reviews) {
+            console.log("hiii");
             var url = "/api/project/"+tmdbId+"/updateMovie";
             return $http.put(url,reviews);
         }

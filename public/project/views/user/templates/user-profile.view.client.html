@@ -1,9 +1,28 @@
-
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-text pull-left">
+            <a class="white-hyperlinks" href="#/moviedefault">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+        </div>
+        <div class="navbar-text pull-right">
+            <a ng-if="model.admin" class="set-glyphicon-margin" href="#/adminconsole">
+                <span class="fa fa-lg fa-user-secret admin" aria-hidden="true"></span>
+            </a>
+            <a>  </a>
+            <a ng-if="model.user" class="mycustomfont" href="#/profile">
+                <span class="glyphicon glyphicon-home" aria-hidden="true"> </span></a>
+        </div>
+        <div>
+            <a class="navbar-brand headingStyle" href="#/Profile">Profile</a>
+        </div>
+    </div>
+</nav>
 <!-- Header -->
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<!--nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
+        <!--div class="navbar-header">
             <button type="button"
                     class="navbar-toggle collapsed"
                     data-toggle="collapse"
@@ -21,33 +40,19 @@
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <!--div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="navbar-text pull-right">
                 <a class="mycustomfont" href="#/moviedefault"><span class="glyphicon glyphicon-home"> </span></a>
             </ul>
         </div>
     </div>
-</nav>
+</nav-->
 <!-- End of Header-->
 
 <!--Body-->
 <div class="container-fluid pushdown">
     <div class="container-fluid">
         <!-- Search Box -->
-        <div class="input-group">
-            <input ng-model = "model.movieName"
-                   type="text"
-                   placeholder="Search movie.."
-                   class="form-control ng-pristine ng-valid ng-touched">
-            <span class="input-group-btn ">
-                   <a href ="#/search/{{model.movieName}}"
-                      class="btn btn-info makegray"
-                      type="button">
-                       <span class="glyphicon glyphicon-search"></span>
-                   </a>
-                </span>
-        </div>
-
         <div class="row">
             <div class="col-xs-8">
                 <h2 class="page-header">{{model.user.firstName}}'s Profile
@@ -79,34 +84,41 @@
                      class="alert alert-success">
                     {{model.success}}
                 </div>
-
-
-
-
-
-
                 </a>
             </div>
 
         </div>
+
+        <div class="input-group">
+            <input ng-model = "model.movieName"
+                   type="text"
+                   placeholder="Search movie.."
+                   class="form-control ng-pristine ng-valid ng-touched">
+            <span class="input-group-btn ">
+                   <a href ="#/search/{{model.movieName}}"
+                      class="btn btn-info searchButtonColor"
+                      type="button">
+                       <span class="glyphicon glyphicon-search"></span>
+                   </a>
+                </span>
+        </div>
+
+
         <!-- Users Reviews -->
         <div class="row">
-            <div class="col-xs-6">
+            <div class="col-xs-12 col-md-6">
                 <div class="container-fluid">
                     <h3>{{model.user.firstName}}'s Reviews</h3>
 
                     <div ng-repeat="reviews in model.user.reviews" class="row">
 
-                        <a class="makeblack" href="#/movie/{{reviews.tmdbId}}">
-                            <div class="col-xs-4">
-                                <img ng-src="{{reviews.imageUrl}}" width = 70>
-                                <h5>{{reviews.name}}</h5>
+                        <div class="well wellColor">
+                            <div class="clearfix">
+                                <img ng-src="{{reviews.imageUrl}}" alt="My Image" class="img-responsive center-block pull-left gap-right imageWidthInReview" >
+                                <h5><b>{{reviews.name}}</b></h5>
+                                <h5>{{reviews.review}}</h5>
 
                             </div>
-                        </a>
-
-                        <div class="col-xs-8">
-                            <h4>{{reviews.review}}</h4>
                         </div>
                         <p></p>
                     </div>
@@ -114,19 +126,28 @@
             </div>
 
             <!-- Users Ratings -->
-            <div class="col-xs-6">
+            <div class="col-xs-12 col-lg-6">
                 <div class="container-fluid">
                     <h3>{{model.user.firstName}}'s Ratings</h3>
 
                     <div ng-repeat="rates in model.user.rates" class="row">
-                        <a class="makeblack" href="#/movie/{{rates.tmdbId}}">
+                        <div class="well wellColor">
+                            <div class="clearfix">
+                                <img ng-src="{{rates.imageUrl}}" alt="My Image" class="img-responsive center-block pull-left gap-right imageWidthInReview" >
+                                <h5> <b>{{model.user.firstName}} rated:</b></h5>
+                                <h5> {{rates.rating}}/5</h5>
+
+                            </div>
+                        </div>
+                        <p></p>
+                        <!--a class="makeblack" href="#/movie/{{rates.tmdbId}}">
                             <div class="col-xs-5">
                                 <img ng-src="{{rates.imageUrl}}" width = 70>
 
                                 <h5>{{model.user.firstName}} rated: {{rates.rating}}/5</h5>
                             </div>
                         </a>
-                        <p></p>
+                        <p></p-->
 
                     </div>
 

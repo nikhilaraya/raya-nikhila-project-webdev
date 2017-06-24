@@ -2,22 +2,22 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-text pull-left">
-            <a class="white-hyperlinks" href="#/user/{{model.userId}}">
+            <a class="white-hyperlinks" href="#/adminconsole">
                 <span class="glyphicon glyphicon-chevron-left"></span>
             </a>
         </div>
         <div class="navbar-text pull-right">
-            <a class="white-hyperlinks" href="#/user/{{model.userId}}/website/new">
-                <span class="glyphicon glyphicon-plus"></span>
+            <a class="white-hyperlinks" href="#/profile">
+                <span class="glyphicon glyphicon-user"></span>
             </a>
         </div>
         <div>
-            <a class="navbar-brand headingStyle" href="#/moviedefault">Websites</a>
+            <a class="navbar-brand headingStyle" href="#/moviedefault">Manage Movies</a>
         </div>
     </div>
 </nav>
 
-<div class="container">
+<div class="container adjustPaddingForHeader">
     <div class="">
         <div class="align-center-style">
             <div class="btn-group">
@@ -36,13 +36,12 @@
 
     <!-- Number of Movies Reviewed-->
     <div class="container">
-        <h4><b>Total Reviews:</b> {{model.moviesCount}}</h4>
+        <h5><b>Total Reviews:</b> {{model.moviesCount}}</h5>
     </div>
 
 
     <!-- Mangage Reviews -->
     <div class="container ">
-        <h4 ><b>Manage Movie Reviews</b></h4>
         <div ng-if="model.error" class="alert alert-warning">
             {{model.error}}
         </div>
@@ -51,24 +50,23 @@
         </div>
         <div class="table-responsive">
             <table class="table table-hover">
+                <thead class="color-heading">
                 <th>Movie</th>
-                <th>Reviewed by</th>
+
                 <th>Visible</th>
                 <th>Flagged</th>
+                <th>Reviewed by</th>
                 <th>Review</th>
-                <th>Update Review</th>
-                <th>Delete Review</th>
-
+                <th>Update</th>
+                <th>Delete</th>
+                </thead>
                 <tr ng-repeat="movie in model.results">
                     <!-- Movie-->
                     <td>
                         <a class="a-tag-black"
-                           href="#/movie/{{movie.tmdbId}}">{{movie.title}}</a>
+                           href="#/movie/{{movie.tmdbId}}"><b>{{movie.title}}</b></a>
                     </td>
-                    <td>
-                        <a class="a-tag-black"
-                           href="#/user/profile/{{movie.username}}">{{movie.username}}</a>
-                    </td>
+
 
                     <!-- Visible -->
                     <td><input type="text"
@@ -80,6 +78,10 @@
                                class="form-control"
                                ng-model="movie.flagged"
                                placeholder="true/false"/></td>
+                    <td>
+                        <a class="a-tag-black"
+                           href="#/user/profile/{{movie.username}}">{{movie.username}}</a>
+                    </td>
                     <!-- Review-->
                     <td><textarea type="text"
                                   ng-model="movie.text"
@@ -152,15 +154,13 @@
 <nav class="navbar navbar-inverse navbar-fixed-bottom">
     <div class="container-fluid">
         <p class="navbar-text pull-left">
-            <a  class="mycustomfont" ng-click="model.logout()">
-                <span class="glyphicon glyphicon-off"></span>
-            </a>
+
 
         </p>
         <p class="navbar-text pull-right">
 
-            <a  class="mycustomfont" href="#/adminconsole">
-                <span class="fa fa-user-secret fa-lg"></span>
+            <a  class="mycustomfont" ng-click="model.logout()">
+                <span class="glyphicon glyphicon-off white-links"></span>
             </a>
         </p>
 

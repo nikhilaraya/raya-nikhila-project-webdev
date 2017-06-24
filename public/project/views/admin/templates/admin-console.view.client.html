@@ -1,17 +1,18 @@
+<!-- Header -->
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-text pull-left">
-            <a class="white-hyperlinks" href="#/user/{{model.userId}}">
+            <a class="white-hyperlinks" href="#/moviedefault">
                 <span class="glyphicon glyphicon-chevron-left"></span>
             </a>
         </div>
         <div class="navbar-text pull-right">
-            <a class="white-hyperlinks" href="#/user/{{model.userId}}/website/new">
-                <span class="glyphicon glyphicon-plus"></span>
+            <a class="white-hyperlinks" href="#/profile">
+                <span class="glyphicon glyphicon-user"></span>
             </a>
         </div>
         <div>
-            <a class="navbar-brand" href="#/moviedefault">Websites</a>
+            <a class="navbar-brand headingStyle" href="#/adminconsole">Admin</a>
         </div>
     </div>
 </nav>
@@ -42,7 +43,7 @@
     </div>
 </nav-->
 
-<div class="container">
+<div class="container adjustPaddingForHeader">
     <div class="register-margin"></div>
     <div class="col-md-2"></div>
     <div class="col-xs-12 col-md-8">
@@ -73,6 +74,10 @@
                    href="#/managemovies">Manage Ratings and Reviews
                 </a>
 
+                <a class="btn btn-success btn-block btn-color"
+                    href="#/managecritics">Manage Critics
+                </a>
+
 
         </div>
     </div>
@@ -80,12 +85,10 @@
 <nav class="navbar navbar-inverse navbar-fixed-bottom">
     <div class="container-fluid">
         <p class="navbar-text pull-left">
-            <a class="mycustomfont" ng-click="model.logout()">
-                <span class="glyphicon glyphicon-off"></span></a>
         </p>
         <p class="navbar-text pull-right">
-            <a class="mycustomfont" href="#/profile">
-                <span class="glyphicon glyphicon-user"></span>
+            <a  class="mycustomfont" ng-click="model.logout()">
+                <span class="glyphicon glyphicon-off white-links"></span>
             </a>
 
         </p>

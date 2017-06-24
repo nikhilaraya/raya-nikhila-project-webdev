@@ -7,8 +7,33 @@ select.form-control {
 .btn-margin-bottom{
     margin-bottom: 5px;
 }
+.gap-right {
+    margin-right: 10px;
+}
+.imageWidthInReview{
+    width: 70px;
+}
+.wellColor{
+    background-color: white;
+}
 .align-center-style{
     text-align: center;
+}
+.white-links
+{
+    color:white;
+}
+.adjustPaddingForHeader{
+    margin-top: 30px;
+}
+.headingBlackStyle{
+    color: black !important;
+    font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive !important;
+}
+.searchButtonColor{
+    color: white;
+    border-color: black;
+    background-color: black;
 }
 .set-glyphicon-margin{
     margin-right:5px;
@@ -22,9 +47,73 @@ select.form-control {
 .a-tag-black{
     color:black;
 }
+.homepageMargin{
+    margin-top: 150px;
+}
+.widthHeightPoster{
+    width: 1080px;
+    height: 1920px;
+}
+.ul-class {
+    width: auto;
+    height: 20%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+li.w92 {
+    margin: 0 12px 0 0;
+    width: 93px;
+    padding-bottom: 8px;
+    text-align: center;
+    height: auto;
+    line-height: normal;
+    display: inline-block;
+    vertical-align: top;
+}
+
+li.w92 img {
+    display: block;
+    margin-bottom: 8px;
+    width: 92px;
+    height: 138px;
+}
+
+.cast-object {
+    width: 60%;
+    height: 20%;
+}
+.ul-class .li-class {
+    width: 20%;
+    display: inline-block;
+}
+.media-object-movie, .profile-photo {
+    max-height: 100%;
+    max-width: 90%;
+    object-fit: contain;
+}
+.media-heading{
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+.paratext{
+    text-overflow:ellipsis;
+}
+.backImage{
+    background-image: url("../images/top-bg.jpg");
+    background-repeat: no-repeat;
+}
+.backGroundColor{
+    background-color: #1e100e;
+}
+#header img {
+    padding-top: 55px;
+    width: 90%;
+}
+
 body {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 40px;
+    padding-bottom: 0px;
     font-family: 'PT Sans Caption', Helvetica, Arial, sans-serif;
 }
 .buttoncolor-admin{

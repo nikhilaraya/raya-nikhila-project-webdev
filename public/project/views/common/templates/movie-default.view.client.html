@@ -1,44 +1,105 @@
 
 
-<!-- Header -->
-<nav class="navbar navbar-inverse navbar-fixed-top">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button"
-                    class="navbar-toggle collapsed"
-                    data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1"
-                    aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a  href="#/moviedefault" class="navbar-brand" rel="home" >
-                <img class="logo_film"
-                     src="./img/moviezone-logo.jpg">
+        <div class="navbar-text pull-left">
+
+        </div>
+        <div class="navbar-text pull-right">
+            <a class="white-hyperlinks" href="#/moviedefault">
+                <span class="glyphicon glyphicon-home">Home</span>
             </a>
         </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="navbar-text pull-right">
-                <a class="mycustomfont" href="#/moviedefault"><span class="glyphicon glyphicon-home"> </span></a>
-            </ul>
+        <div>
+            <a class="navbar-brand" href="#/moviedefault">Movie Roll</a>
         </div>
     </div>
 </nav>
 
 
-<div class="container-fluid pushdown">
+<div class="container-fluid pushdown adjustPaddingForHeader">
     <div class="container-fluid">
 
         <div class="input-group">
             <input ng-model = "model.movieName"
                    type="text"
                    placeholder="Search movie.."
-                   class="form-control ng-pristine ng-valid ng-touched"
-            >
+                   class="form-control ng-pristine ng-valid ng-touched">
             <span class="input-group-btn ">
                    <a href ="#/search/{{model.movieName}}"
                       class="btn btn-info makegray"
@@ -71,11 +132,7 @@
                         <a href="#/movie/{{movie.id}}"><h4 class="smallheader">{{movie.title| limitTo:35}}</h4></a>
                         <h5 class="rating">Release Date: {{movie.release_date | date:'MMM d, y'}}</h5>
                         <h4 class="smallheader">
-                        <span ng-repeat="id in movie.genre_ids | limitTo:3">
-                            <span class="label label-default label-as-badge" >
-                                {{model.genreName(id)}}
-                            </span>&nbsp;&nbsp;
-                        </span>
+                            <p><h5>{{movie.overview| limitTo:60}}{{movie.overview.length > 60 ? "..." : ""}}</h5></p>
                             <br ng-if="movie.genre_ids.length==0"/>
                         </h4>
                     </div>
@@ -105,15 +162,10 @@
                     <div ng-model="movie.criticsRating"
                          ng-init="movie.criticsRating=(movie.vote_average/2)" class="meter">
                         <p> <h5 class="rating">Rating : {{movie.criticsRating}}</h5>
-                        <meter class="meter" min="0" max="5" value="{{movie.criticsRating}}"></meter>
                         </p>
                     </div>
                     <h4 class="smallheader">
-                        <span ng-repeat="id in movie.genre_ids | limitTo:3">
-                            <span class="label label-default label-as-badge" >
-                                {{model.genreName(id)}}
-                            </span>&nbsp;&nbsp;
-                        </span>
+                        <p><h5>{{movie.overview| limitTo:60}}{{movie.overview.length > 60 ? "..." : ""}}</h5></p>
                         <br ng-if="movie.genre_ids.length==0"/>
                     </h4>
                 </div>

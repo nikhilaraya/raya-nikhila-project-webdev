@@ -42,6 +42,7 @@
         }
 
         function updateMovie(tmdbId,userId,visible,flagged,text){
+            console.log("hii");
             var reviews = {
                 userId: userId,
                 visible: visible,

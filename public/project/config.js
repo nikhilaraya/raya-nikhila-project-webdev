@@ -25,6 +25,14 @@
                     loggedIn: checkLoggedIn
                 }
             })
+            .when("/managecritics", {
+                templateUrl: "views/admin/templates/manage-critics.view.client.html",
+                controller: "manageCriticsController",
+                controllerAs: "model",
+                resolve :{
+                    loggedIn: checkLoggedIn
+                }
+            })
             .when("/manageflaggedreviews", {
                 templateUrl: "views/admin/templates/manage-flaggedreviews.view.client.html",
                 controller: "manageFlaggedReviewsController",
