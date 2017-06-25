@@ -2,12 +2,12 @@
     <div class="container-fluid" >
         <div class="navbar-text pull-left">
             <a class="white-hyperlinks" href="#/home">
-                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="glyphicon glyphicon-chevron-left addYellow"></span>
             </a>
         </div>
         <div class="navbar-text pull-right">
             <a class="white-hyperlinks" href="#/moviedefault">
-                <span class="glyphicon glyphicon-home">Home</span>
+                <span class="glyphicon glyphicon-home addYellow"></span>
             </a>
         </div>
         <div>
@@ -16,40 +16,9 @@
     </div>
 </nav>
 
-
-<!--nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button"
-                    class="navbar-toggle collapsed"
-                    data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1"
-                    aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a  href="#/moviedefault" class="navbar-brand" rel="home">
-            </a>
-        </div>
-
-        < Collect the nav links, forms, and other content for toggling >
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="navbar-text pull-right">
-                <a class="mycustomfont" href="#/moviedefault"><span class="glyphicon glyphicon-home"> </span></a>
-            </ul>
-        </div>
-    </div>
-</nav-->
-<!-- End of Header-->
-
-<!--Body-->
-
-    <div class="container adjustPaddingForHeader">
+<div class="loginBackground" >
+    <div class="container adjustPaddingForHeader bottomPadding">
         <div class="login-margin"></div>
-        <!-- Search Box -->
-        <!-- ng-if gives same thing. but it is only added if it is a truthee-->
         <div class="col-md-2"></div>
         <div class="col-xs-12 col-md-8">
         <div ng-show="model.error" class="alert alert-danger" role="alert">
@@ -58,7 +27,7 @@
 
         <form name="model.loginForm" novalidate>
             <div class="form-group">
-                <label for="username">Username</label>
+                <label for="username" class="subHeadingStyle">Username</label>
                 <input type="text"
                        ng-model="username"
                        id="username"
@@ -66,10 +35,10 @@
                        class="form-control"
                        name="username"
                        placeholder="alice">
-                <span class="alert-class" ng-show="model.loginForm.username.$invalid">{{model.alert}}</span>
+                <span class="alert-class subHeadingStyle" ng-show="model.loginForm.username.$invalid">{{model.alert}}</span>
             </div>
             <div class="form-group">
-                <label for="password">Password</label>
+                <label for="password" class="subHeadingStyle">Password</label>
                 <input type="password"
                        ng-model="password"
                        id="password"
@@ -77,43 +46,32 @@
                        class="form-control"
                        name="password"
                        placeholder="alice@123">
-                <span class="alert-class" ng-show="model.loginForm.password.$invalid">{{model.alert}}</span>
+                <span class="alert-class subHeadingStyle" ng-show="model.loginForm.password.$invalid">{{model.alert}}</span>
             </div>
         </form>
 
         <a ng-click="model.login(username,password)"
-           class="btn btn-primary btn-block btn-color"
+           class="btn btn-primary btn-block btn-color addYellow"
            type="submit">Login</a>
 
-        <a class="btn btn-success btn-block btn-color"
+        <a class="btn btn-success btn-block btn-color addYellow"
            href="#/register">Register</a>
 
-        <!--a href="/auth/google" class="btn btn-danger btn-block btn-color">
-            <span class="fa fa-google-plus"></span>
-            Login via Google
-        </a-->
-        <a href="/auth/facebook" class="btn btn-primary btn-block btn-color">
+        <a href="/auth/facebook" class="btn btn-primary btn-block btn-color addYellow">
             <span class="fa fa-facebook"></span>
             Login via Facebook
         </a>
         </div>
         <div class="col-md-2"></div>
-    </div>
+    </div >
 
-<!-- End of Body-->
-
-<!-- Footer -->
-<nav class="navbar navbar-inverse navbar-fixed-bottom">
+<nav class="navbar navbar-inverse navbar-fixed-bottom blackFooter">
     <div class="container-fluid">
         <p class="navbar-text pull-right">
-
         </p>
         <p class="navbar-text pull-left">
-
-            </a>
         </p>
-
     </div>
 </nav>
-
+</div>
 

@@ -12,13 +12,12 @@
             </a>
         </div>
         <div>
-            <a class="navbar-brand headingStyle" href="#/moviedefault">Manage Reviews</a>
+            <a class="navbar-brand headingStyle" href="#/moviedefault">Flagged Reviews</a>
         </div>
     </div>
 </nav>
 
-
-<!--Body-->
+<div>
 <div class="container adjustPaddingForHeader">
     <div class="">
         <div class="align-center-style">
@@ -50,7 +49,6 @@
             </tr>
             </thead>
 
-            <!-- Table Body-->
             <tbody ng-repeat="review in model.results">
             <tr ng-if= "review.visible=='true' && review.flagged=='true'">
                 <td >
@@ -58,16 +56,12 @@
                         <a class="makeblack"
                            href="#/user/profile/{{review.username}}">
                        {{review.username}}</a></span>
-
-
                 </td>
-                <td >
-                    <span  >
+                <td>
+                    <span>
                         <a class="makeblack"
                            href="#/movie/{{review.tmdbId}}">
                        {{review.title}}</a></span>
-
-
                 </td>
                 <td>{{review.text}}</td>
                 <td><a  type="button" ng-click="model.removeReview(review._id, review.tmdbId)"
@@ -79,16 +73,12 @@
                         <span class="glyphicon glyphicon-ok "> Keep </span>
                     </a>
                 </td>
-
             </tr>
             </tbody>
-
         </table>
     </div>
 </div>
 
-
-<!-- Footer -->
 <nav class="navbar navbar-inverse navbar-fixed-bottom">
     <div class="container-fluid">
         <p class="navbar-text pull-left">
@@ -103,3 +93,4 @@
 
     </div>
 </nav>
+</div>

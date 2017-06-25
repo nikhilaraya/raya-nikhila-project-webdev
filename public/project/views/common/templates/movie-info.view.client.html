@@ -1,57 +1,21 @@
-<!--<img href="../../../project/img/film_info_background.jpg" height="100%">-->
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-text pull-left">
-            <a class="white-hyperlinks" href="#/home">
+            <a class="white-hyperlinks addYellow" href="#/home">
                 <span class="glyphicon glyphicon-chevron-left"></span>
             </a>
         </div>
         <div class="navbar-text pull-right">
-            <a class="white-hyperlinks" href="#/moviedefault">
+            <a class="white-hyperlinks addYellow" href="#/moviedefault">
                 <span class="glyphicon glyphicon-home"></span>
             </a>
         </div>
         <div>
-            <a class="navbar-brand white-hyperlinks" href="#/moviedefault">Movie Roll</a>
+            <a class="navbar-brand white-hyperlinks addYellow headingStyle" href="#/moviedefault">Nick Flix</a>
         </div>
     </div>
 </nav>
 
-
-
-<!-- Header -->
-<!--nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <!--div class="navbar-header">
-            <button type="button"
-                    class="navbar-toggle collapsed"
-                    data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1"
-                    aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a  href="#/moviedefault" class="navbar-brand" rel="home" >
-                <img class="logo_film"
-                     src="./img/moviezone-logo.jpg">
-            </a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <!--div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="navbar-text pull-right">
-                <a class="mycustomfont" href="#/moviedefault"><span class="glyphicon glyphicon-home"> </span></a>
-            </ul>
-        </div>
-    </div>
-</nav-->
-<!-- End of Header-->
-
-
-<!--Body-->
 <div class="container-fluid pushdown adjustPaddingForHeader">
     <div class="input-group">
         <input ng-model = "model.movieName"
@@ -60,43 +24,36 @@
                class="form-control ng-pristine ng-valid ng-touched">
         <span class="input-group-btn ">
                    <a href ="#/search/{{model.movieName}}"
-                      class="btn btn-info makegray"
+                      class="btn btn-info buttoncolor-adminbtn"
                       type="button">
-                       <span class="glyphicon glyphicon-search"></span>
+                       <span class="glyphicon glyphicon-search buttoncolor-adminbtn"></span>
                    </a>
-                </span>
+        </span>
     </div>
-
-
-
-
-
-<p></p>
+    <p></p>
     <img class="img-responsive" ng-src="https://image.tmdb.org/t/p/original/{{model.movie.backdrop_path}}">
-        <p></p>
-    <div class="panel panel-default">
+    <p></p>
+    <div class="panel panel-default adjustMovieInfoHeader">
         <div class="panel-body">
-            <span class="label label-default pull-left">Release: {{model.movie.release_date}}</span>
             <h1>
                 {{model.movie.title}}
             </h1>
-
             <div class="caption">
-            <span class="h5 text-muted" ng-repeat="genre in model.movie.genres">
-            {{"#" + genre.name + " "}}
-        </span>
+                <span class="h5 text-muted" ng-repeat="genre in model.movie.genres">
+                    {{"#" + genre.name + " "}}
+                </span>
             </div>
 
             <i class="fa fa-clock-o" aria-hidden="true">
                 {{model.movie.runtime + " mins"}}
             </i>
 
-        <div class="col-sm-9">
+        <div class="col-sm-12">
             <h3 class="page-header"><b>Summary</b></h3>
             <p class="justifytext">{{model.movie.overview}}</p>
+
             <h3  class="page-header"><b>Release Date</b></h3>
             <div ng-if="!model.released">
-                <br/><br/><br/>
             </div>
 
             <h5 ng-bind="model.movie.release_date | date: 'mediumDate'"></h5>
@@ -104,135 +61,100 @@
             <h3  class="page-header"><b>Genre</b></h3>
             <ul> <h5 ng-repeat="genre in model.movie.genres | limitTo:4">
                 <li>{{genre.name}}</li>
-            </h5>  </ul>
-        </div>
-    </div>
+            </h5></ul>
 
-    <div class="row">
-        <div class="col-xs-6">
-            <h4  class="page-header"><b>Movie Zone Rating</b></h4>
-            <div ng-model="model.movie.usersRating"
-                 class="meter">
-
-                <meter class="meter" min="0" max="5" value="{{model.avgRating}}"></meter>
-                <p> <h5 class="rating">{{model.avgRating}}</h5>
-                </p>
+            <h4  class="page-header"><b>Nick Flix Rating</b></h4>
+            <div ng-model="model.movie.usersRating">
+                        <p> <h5 class="rating">{{model.avgRating}}</h5>
+                        </p>
             </div>
 
-        </div>
-        <div class="col-xs-6">
             <h4  class="page-header"><b>IMDB Critics Rating</b></h4>
-            <div ng-model="model.movie.criticsRating"
-                 class="meter">
+            <div ng-model="model.movie.criticsRating">
+                <p> <h5 class="rating">{{model.movie.criticsRating}}</h5> </p>
+             </div>
 
-                <meter class="meter" min="0" max="5" value="{{model.movie.criticsRating}}"></meter>
-                <p> <h5 class="rating">{{model.movie.criticsRating}}</h5>
-                </p>
+            <h4  class="page-header"><b>Watch the trailer now</b></h4>
+            <div class="col-sm-12">
+                <div class="video-container">
+                    <iframe  width = "100%" class="paddingYoutube"
+                             ng-src="{{model.movie.video_path}}"
+                             frameborder="0" allowfullscreen=""></iframe>
+                </div>
             </div>
-        </div>
+            <p></p>
 
-
-    </div>
-    <p></p>
-    <div><h2>Watch the Trailer now</h2></div>
-    <p></p>
-
-    <div class="col-sm-12">
-        <div class="video-container">
-            <iframe  width = "100%"
-                     ng-src="{{model.movie.video_path}}"
-                     frameborder="0" allowfullscreen=""></iframe>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-12 ">
-            <h3 class="page-header">Cast</h3>
-            <h2></h2>
+            <h4  class="page-header"><b>Cast</b></h4>
             <ul class="list-inline">
                 <li class="w92"  ng-repeat="actor in model.movie.credits.cast"
                     ng-if="actor.profile_path">
                     <a href="#/cast/{{actor.id}}">
                         <img ng-src="https://image.tmdb.org/t/p/w92{{actor.profile_path}}"></a>
-                    <a class="title makeblack" href="#/cast/{{actor.id}}">{{actor.name}}</a>
-
+                    <a class="title makeBlackText" href="#/cast/{{actor.id}}">{{actor.name}}</a>
                 </li>
             </ul>
-        </div>
-    </div>
 
-    <p></p>
-
-
-    <div ng-if="model.error"
-         class="alert alert-danger">
-        {{model.error}}
-    </div>
-
-
-    <div ng-if="model.notLoggedInError"
-         class="alert alert-danger">
-        {{model.notLoggedInError}}
-    </div>
-
-    <a ng-if="model.notloggedIn" class="btn btn-success btn-block"
-       ng-click="model.giveError()">Rate and Review this movie</a>
-
-
-    <a  ng-if="model.loggedIn" class="btn btn-success btn-block"
-        ng-click="model.reviewPage()">Rate and Review this movie</a>
-
-
-    <p></p>
-    <div ng-if="model.givecheckoutusererror"
-         class="alert alert-danger">
-        {{model.givecheckoutusererror}}
-    </div>
-    <h3 class="page-header">User Reviews</h3>
-
-    <div   ng-repeat = "rev in model.movieInfo.reviews" >
-        <div ng-if = "rev.visible=='true'">
-            <div class="row">
-                <!-- Username -->
-                <div  ng-if="model.loggedIn" class="col-xs-9">
-                    <a href="#/user/profile/{{rev.username}}">
-                        <h3 class="glyphicon glyphicon-user makeblack"> {{rev.username}}
-                        </h3>
-                    </a>
-                </div>
-                <div  ng-if="model.notloggedIn" class="col-xs-9">
-                    <a ng-click="model.needtoLoginforProfile()">
-                        <h3 class="glyphicon glyphicon-user makeblack"> {{rev.username}}
-                        </h3>
-                    </a>
-                </div>
-
-
-                <a  type="button " ng-click="model.reportReview(rev._id)"
-                    class=" reportbutton btn btn-default btn-sm">
-                    <span class="glyphicon glyphicon-exclamation-sign  "></span> Report Abuse
-                </a>
-
+            <div ng-if="model.error"
+                 class="alert alert-danger">
+                {{model.error}}
             </div>
 
-            <div  class="row">
-                <div class="col-xs-12">
-                    <p>{{rev.text}}</p>
-                </div>
+            <div ng-if="model.notLoggedInError"
+                 class="alert alert-danger">
+                {{model.notLoggedInError}}
             </div>
 
+            <a ng-if="model.notloggedIn" class="btn btn-success btn-block"
+               ng-click="model.giveError()">Rate and Review this movie</a>
 
+
+            <a  ng-if="model.loggedIn" class="btn btn-success btn-block buttoncolor-adminbtn"
+                ng-click="model.reviewPage()">Rate and Review this movie</a>
+
+            <div ng-if="model.givecheckoutusererror"
+                 class="alert alert-danger">
+                {{model.givecheckoutusererror}}
+            </div>
+            <h4 class="page-header"><b>User Reviews</b></h4>
+            <div   ng-repeat = "rev in model.movieInfo.reviews" >
+                <div ng-if = "rev.visible=='true'">
+                    <div class="row">
+                        <div  ng-if="model.loggedIn" class="col-xs-9">
+                            <a href="#/user/profile/{{rev.username}}">
+                                <h3 class="glyphicon glyphicon-user makeBlackText"> {{rev.username}}
+                                </h3>
+                            </a>
+                        </div>
+                        <div  ng-if="model.notloggedIn" class="col-xs-9">
+                            <a ng-click="model.needtoLoginforProfile()">
+                                <h3 class="glyphicon glyphicon-user makeBlackText"> {{rev.username}}
+                                </h3>
+                            </a>
+                        </div>
+                        <a  type="button " ng-click="model.reportReview(rev._id)"
+                            class=" reportbutton btn btn-default btn-sm">
+                            <span class="glyphicon glyphicon-exclamation-sign  "></span> Report Abuse
+                        </a>
+                    </div>
+
+                    <div  class="row">
+                        <div class="col-xs-12">
+                            <p>{{rev.text}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
+        </div>
+        </div>
     </div>
-
 </div>
 
 <nav class="navbar navbar-inverse navbar-fixed-bottom">
     <div class="container-fluid">
         <p class="navbar-text pull-left">
             <a ng-if="model.loggedIn" class="mycustomfont" ng-click="model.logout()">
-                <span class="glyphicon glyphicon-off"></span></a>
+                <span class="glyphicon glyphicon-off addYellow"></span></a>
 
             <a ng-if="model.notloggedIn" class="mycustomfont"
                href="#/login">
@@ -241,16 +163,13 @@
         </p>
         <p class="navbar-text pull-right">
             <a ng-if="model.loggedIn" class="mycustomfont" href="#/profile">
-                <span class="glyphicon glyphicon-user"></span>
+                <span class="glyphicon glyphicon-user addYellow"></span>
             </a>
-
-
             <a ng-if="model.notloggedIn" class="mycustomfont"
                href="#/register">
                 <span><b>Sign Up</b></span>
             </a>
         </p>
-
     </div>
 </nav>
 

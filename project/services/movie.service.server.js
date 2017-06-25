@@ -11,6 +11,7 @@ app.post('/api/project/movie',createMovie);
 app.put('/api/project/:tmdbId/updateMovie',updateMovie);
 app.put('/api/project/:tmdbId/ratingsAndReviews',updateRatingAndReview);
 app.put('/api/project/reportReview',reportReview);
+app.put('/api/project/removeReview',removeReview);
 app.put('/api/project/doNotRemoveReview',doNotRemoveReview);
 app.delete("/api/project/movie/:tmdbId/remove/:userId",deleteMovie);
 
@@ -96,7 +97,7 @@ function removeReview(req,res) {
         .findMovieById(tmdbId)
         .then(function (movie) {
             var retrieveMovie = movie[0];
-            var reviews = foundMovie.reviews;
+            var reviews = retrieveMovie.reviews;
 
             for(var i in reviews){
                 if(reviews[i]._id == reviewId){

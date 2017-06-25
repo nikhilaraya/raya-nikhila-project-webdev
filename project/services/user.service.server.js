@@ -116,7 +116,6 @@ function updateUser(req,res) {
 
 function findUserById(req,res) {
     var userId = req.params.userId;
-    console.log(userId);
     userModel
         .findUserById(userId)
         .then(function (user) {
@@ -139,7 +138,6 @@ function deleteUser(req,res) {
 }
 
 function login(req,res) {
-    console.log("in userservice login");
     var user = req.user;
     res.json(user);
 }
@@ -256,14 +254,13 @@ function unfollowUser(req,res) {
 }
 
 function localStrategy(username, password, done) {
-    console.log("in strategy");
     userModel
         .findUserByUsername(username)
         .then(function (user) {
             if(user && bcrypt.compareSync(password, user.password)) {
                 done(null, user);
             } else {
-                done(null, false);
+                done(null, true);
             }
         }, function (error) {
             done(error, false);

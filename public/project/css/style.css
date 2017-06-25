@@ -24,7 +24,8 @@ select.form-control {
     color:white;
 }
 .adjustPaddingForHeader{
-    margin-top: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 .headingBlackStyle{
     color: black !important;
@@ -47,8 +48,13 @@ select.form-control {
 .a-tag-black{
     color:black;
 }
+
+.setBackground{
+    background-color: #fed136;
+    border-color: #fed136;
+}
 .homepageMargin{
-    margin-top: 150px;
+    margin-top: 200px;
 }
 .widthHeightPoster{
     width: 1080px;
@@ -103,8 +109,53 @@ li.w92 img {
     background-image: url("../images/top-bg.jpg");
     background-repeat: no-repeat;
 }
+.backImageBrick{
+    background-image: url("../images/dark-grey.jpg");
+}
 .backGroundColor{
     background-color: #1e100e;
+}
+.movieInfoBackground{
+    background-image: url("../images/movieInfo.jpg");
+}
+.loginBackground{
+    background-image: url("../images/penguins.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+}
+.adminBackground{
+    background-image: url("../images/up-wide.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+}
+.registerBackground{
+    background-image: url("../images/minionsD.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+}
+.plainBackground{
+    background-image: url("../images/angrybird.jpg");
+    background-size: cover;
+    background-position-x: center;
+}
+
+
+.white-hyperlinks{
+    color: white;
+}
+.bottomRegisterPadding{
+    padding-bottom: 130px;
+}
+
+.bottomAdminPadding{
+    padding-bottom: 320px;
+}
+.bottomPadding
+{
+    padding-bottom: 240px
 }
 #header img {
     padding-top: 55px;
@@ -122,17 +173,38 @@ body {
     border-color: #fed136 !important;
     background-color: #fed136 !important;
 }
+.adjustPaddingForFooter{
+    padding-bottom: 230px;
+}
+.adjustMovieInfoHeader{
+    margin-bottom: 30px;
+}
+.addYellow{
+    color: #fed136 !important;
+}
 .buttoncolor-adminbtn{
     color: #fed136;
     font-weight: bold;
     border-color: black !important;
     background-color: black !important;
 }
+.rateMovie{
+    margin-top: 50px;
+}
+.paddingYoutube{
+    padding-bottom: 30px;
+}
 .headingStyle{
     color: #fed136 !important;
     font-size: xx-large;
     font-weight: bolder;
     font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive !important;
+}
+.subHeadingStyle{
+    color: #fed136 !important;
+}
+.blackFooter{
+    background-color:black;
 }
 .headingStyleInBlack{
     font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive !important;
@@ -150,7 +222,9 @@ body {
 a:hover{
     text-decoration: none;
 }
-
+.makeBlackText{
+    color: black;
+}
 .fixed-top-header-arrow{
     font-size: 12px;
     padding-left: 0px;

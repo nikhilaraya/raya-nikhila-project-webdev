@@ -3,57 +3,47 @@
     <div class="container-fluid">
         <div class="navbar-text pull-left">
             <a class="white-hyperlinks" href="#/adminconsole">
-                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="glyphicon glyphicon-chevron-left addYellow"></span>
             </a>
         </div>
         <div class="navbar-text pull-right">
             <a class="white-hyperlinks" href="#/profile">
-                <span class="glyphicon glyphicon-user"></span>
+                <span class="glyphicon glyphicon-user addYellow"></span>
             </a>
         </div>
         <div>
-            <a class="navbar-brand headingStyle" href="#/moviedefault">Manage Critics</a>
+            <a class="navbar-brand headingStyle" href="#/moviedefault">Critics</a>
         </div>
     </div>
 </nav>
 
-<!--nav class="navbar navbar-fixed-top navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a  href="#/moviedefault" class="navbar-brand" rel="home" >
-                <img class="logo_film"
-                     src="./img/moviezone-logo.jpg">
-            </a>
-
-        </div>
-
-    </div>
-</nav-->
-
-
-<!--Body-->
-
-
-
-
+<div>
 <div class="container adjustPaddingForHeader">
     <div class="col-xs-12 col-md-8">
 
         <div class="container">
             <div class="">
                 <div class="align-center-style">
-                    <div class="btn-group">
+                    <div class="btn-group hidden-xs">
                         <a class="btn btn-success buttoncolor-adminbtn btn-margin-bottom white-hyperlinks"
                            href="#/managemovies">Manage Ratings and Reviews
                         </a>
                         <a class="btn btn-success buttoncolor-admin btn-margin-bottom white-hyperlinks"
                            href="#/manageflaggedreviews">Manage Flagged Reviews
+                        </a>
+                        <a class="btn btn-success buttoncolor-adminbtn btn-margin-bottom white-hyperlinks"
+                           href="#/manageusers">Manage Users
+                        </a>
+                    </div>
+                    <div class="btn-group-vertical visible-xs">
+                        <a class="btn btn-success buttoncolor-adminbtn btn-margin-bottom white-hyperlinks"
+                           href="#/managemovies">Manage Ratings and Reviews
+                        </a>
+                        <a class="btn btn-success buttoncolor-admin btn-margin-bottom white-hyperlinks"
+                           href="#/manageflaggedreviews">Manage Flagged Reviews
+                        </a>
+                        <a class="btn btn-success buttoncolor-adminbtn btn-margin-bottom white-hyperlinks"
+                           href="#/manageusers">Manage Users
                         </a>
                     </div>
                 </div>
@@ -95,9 +85,7 @@
                     <a ng-click="model.createCritic(model.username, model.password, model.email)"
                        class="btn btn-block btn-success btn-color">Create Critic
                     </a>
-
                 </div>
-
             </div>
         </div>
         <p></p>
@@ -130,7 +118,7 @@
             </table>
         </div>
     </div>
-    <!-- Role Manager-->
+
     <div class="container pushdown">
         <h4><b>Update Role</b></h4>
         <div ng-if="model.warning" class="alert alert-warning">
@@ -152,8 +140,10 @@
                 </thead>
                 <tr ng-repeat="user in model.users">
                     <td>
-                        <span ng-if="user.admin=='true'" class="fa fa-lg fa-user-secret set-glyphicon-margin"></span>
-                        <span ng-if="user.admin=='false'" class="glyphicon glyphicon-user set-glyphicon-margin"></span>
+                        <span ng-if="user.admin=='true'"
+                              class="fa fa-lg fa-user-secret set-glyphicon-margin"></span>
+                        <span ng-if="user.admin=='false'"
+                              class="glyphicon glyphicon-user set-glyphicon-margin"></span>
                         <a class="a-tag-black"
                            href="#/user/profile/{{user.username}}">{{user.username}}</a>
                     </td>
@@ -178,12 +168,9 @@
                     <td><a class="fa fa-user-times fa-lg a-tag-black"
                            ng-click="model.deleteCritic(user._id)"></a>
                     </td>
-
-
                 </tr>
             </table>
         </div>
-
     </div>
 
 
@@ -202,10 +189,11 @@
             <p class="navbar-text pull-right">
 
                 <a class="white-hyperlinks" ng-click="model.logout()">
-                    <span class="glyphicon glyphicon-off white-links"></span>
+                    <span class="glyphicon glyphicon-off white-links addYellow"></span>
                 </a>
             </p>
 
         </div>
     </nav>
+</div>
 </div>

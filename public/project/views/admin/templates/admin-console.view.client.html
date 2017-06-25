@@ -16,34 +16,9 @@
         </div>
     </div>
 </nav>
-<!--nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button"
-                    class="navbar-toggle collapsed"
-                    data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1"
-                    aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a  href="#/moviedefault" class="navbar-brand" rel="home" >
-            </a>
-        </div>
 
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="navbar-text pull-right">
-                <a class="mycustomfont" href="#/moviedefault">
-                    <span class="glyphicon glyphicon-home"> </span>
-                </a>
-            </ul>
-        </div>
-    </div>
-</nav-->
-
-<div class="container adjustPaddingForHeader">
+<div class="adminBackground">
+<div class="container adjustPaddingForHeader bottomAdminPadding">
     <div class="register-margin"></div>
     <div class="col-md-2"></div>
     <div class="col-xs-12 col-md-8">
@@ -52,16 +27,16 @@
                    type="text"
                    placeholder="Search movie.."
                    class="form-control ng-pristine ng-valid ng-touched">
-            <span class="input-group-btn ">
+                <span class="input-group-btn ">
                    <a href ="#/search/{{model.movieName}}"
-                      class="btn btn-info makegray"
+                      class="btn btn-info searchButtonColor"
                       type="button">
                        <span class="glyphicon glyphicon-search"></span>
                    </a>
                 </span>
         </div>
-        <div class="register-margin"></div>
 
+        <div class="register-margin"></div>
                 <a class="btn btn-success btn-block btn-color"
                    href="#/manageusers">Manage Users
                 </a>
@@ -77,8 +52,6 @@
                 <a class="btn btn-success btn-block btn-color"
                     href="#/managecritics">Manage Critics
                 </a>
-
-
         </div>
     </div>
 
@@ -90,8 +63,7 @@
             <a  class="mycustomfont" ng-click="model.logout()">
                 <span class="glyphicon glyphicon-off white-links"></span>
             </a>
-
         </p>
-
     </div>
 </nav>
+</div>

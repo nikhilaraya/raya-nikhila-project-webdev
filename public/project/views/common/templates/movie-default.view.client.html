@@ -1,118 +1,40 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top ">
     <div class="container-fluid">
         <div class="navbar-text pull-left">
 
         </div>
         <div class="navbar-text pull-right">
-            <a class="white-hyperlinks" href="#/moviedefault">
-                <span class="glyphicon glyphicon-home">Home</span>
+            <a class="white-hyperlinks addYellow" href="#/moviedefault">
+                <span class="glyphicon glyphicon-home">&nbsp;</span>
             </a>
         </div>
         <div>
-            <a class="navbar-brand" href="#/moviedefault">Movie Roll</a>
+            <a class="navbar-brand headingStyle" href="#/moviedefault">Nick Flix</a>
         </div>
     </div>
 </nav>
 
 
-<div class="container-fluid pushdown adjustPaddingForHeader">
+<div class="container-fluid pushdown adjustPaddingForHeader backImageBrick">
     <div class="container-fluid">
-
         <div class="input-group">
             <input ng-model = "model.movieName"
                    type="text"
                    placeholder="Search movie.."
                    class="form-control ng-pristine ng-valid ng-touched">
+
             <span class="input-group-btn ">
                    <a href ="#/search/{{model.movieName}}"
-                      class="btn btn-info makegray"
+                      class="btn btn-info setBackground"
                       type="button">
-                       <span class="glyphicon glyphicon-search"></span>
+                       <span class="glyphicon glyphicon-search setBackground"></span>
                    </a>
-                </span>
+            </span>
         </div>
     </div>
 
-
-    <div class="col-sm-12   col-md-12   main">
-        <h3 class="page-header">New Movies</h3>
+    <div class="col-sm-12 col-md-12">
+        <h3 class="page-header  headingStyle">New Movies</h3>
         <div class="row placeholders">
             <div class="col-xs-12
                     col-sm-8
@@ -123,13 +45,12 @@
                 <div class="thumbnail">
                     <div class="embed-responsive embed-responsive-4by3">
                         <a ng-if="!movie.video_url" href="#/movie/{{movie.id}}">
-                            <!--POSTER-->
                             <img class="img img-responsive"
                                  ng-src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
                         </a>
                     </div>
                     <div class="caption">
-                        <a href="#/movie/{{movie.id}}"><h4 class="smallheader">{{movie.title| limitTo:35}}</h4></a>
+                        <a href="#/movie/{{movie.id}}"><h4 class="smallheader makeBlackText">{{movie.title| limitTo:35}}</h4></a>
                         <h5 class="rating">Release Date: {{movie.release_date | date:'MMM d, y'}}</h5>
                         <h4 class="smallheader">
                             <p><h5>{{movie.overview| limitTo:60}}{{movie.overview.length > 60 ? "..." : ""}}</h5></p>
@@ -142,13 +63,12 @@
     </div>
 </div>
 
-<div class=" col-sm-12   col-md-12  main">
-    <h3>Now Playing..</h3>
+<div class=" col-sm-12   col-md-12  main backImageBrick adjustPaddingForFooter">
+    <h3 class="headingStyle">Now Playing..</h3>
     <div class="row placeholders">
         <div class="col-xs-12 col-sm-8 col-sm-3 placeholder" ng-repeat="movie in model.nowPlaying" ng-if="movie.poster_path">
             <div class="thumbnail">
                 <div class="embed-responsive embed-responsive-4by3">
-                    <!--<iframe ng-src="{{movie.video_url}}"></iframe>-->
                     <a ng-if="!movie.video_url"
                        href="#/movie/{{movie.id}}">
                         <img ng-src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
@@ -156,7 +76,7 @@
                 </div>
                 <div class="caption">
                     <a href="#/movie/{{movie.id}}">
-                        <h4 class="smallheader">{{movie.title| limitTo:30}}</h4>
+                        <h4 class="makeBlackText">{{movie.title| limitTo:30}}</h4>
                     </a>
 
                     <div ng-model="movie.criticsRating"
@@ -174,31 +94,26 @@
     </div>
 </div>
 
-
-
 <nav class="navbar navbar-inverse navbar-fixed-bottom">
     <div class="container-fluid">
         <p class="navbar-text pull-left">
-            <a ng-if="model.loggedIn" class="mycustomfont" ng-click="model.logout()">
+            <a ng-if="model.loggedIn" class="mycustomfont addYellow" ng-click="model.logout()">
                 <span class="glyphicon glyphicon-off"></span></a>
 
-            <a ng-if="model.notloggedIn" class="mycustomfont"
+            <a ng-if="model.notloggedIn" class="mycustomfont addYellow"
                href="#/login">
                 <span><b>Login</b></span>
             </a>
         </p>
         <p class="navbar-text pull-right">
-            <a ng-if="model.loggedIn" class="mycustomfont" href="#/profile">
+            <a ng-if="model.loggedIn" class="mycustomfont addYellow" href="#/profile">
                 <span class="glyphicon glyphicon-user"></span>
             </a>
 
-
-            <a ng-if="model.notloggedIn" class="mycustomfont"
+            <a ng-if="model.notloggedIn" class="mycustomfont addYellow"
                href="#/register">
                 <span><b>Sign Up</b></span>
             </a>
         </p>
-
     </div>
 </nav>
-

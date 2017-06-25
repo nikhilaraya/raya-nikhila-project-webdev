@@ -42,6 +42,7 @@
                     console.log("hgch"+unfollow);
                     if(unfollow){
                         model.unfollow = "you are now unfollowing this user";
+                        model.success = "you are now unfollowing this user";
                     }
                     else
                     {
