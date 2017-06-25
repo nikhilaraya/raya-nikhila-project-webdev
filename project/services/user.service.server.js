@@ -25,17 +25,17 @@ var FacebookStrategy = require('passport-facebook').Strategy;
     callbackURL  : process.env.GOOGLE_CALLBACK_URL
 };
 */
-/*var facebookConfig = {
+var facebookConfig = {
     clientID     : process.env.FACEBOOK_CLIENT_ID,
     clientSecret : process.env.FACEBOOK_CLIENT_SECRET,
     callbackURL  : process.env.FACEBOOK_CALLBACK_URL
-};*/
+};
 
-var facebookConfig = {
+/*var facebookConfig = {
     clientID     : '570649636657678',
     clientSecret : 'ebe2e1005a52b79155e84068c22a8abe',
     callbackURL  : 'http://localhost:3000/auth/facebook/callback'
-};
+};*/
 
 app.post("/api/project/register", register);
 app.get("/api/project/user/:userId", findUserById);
