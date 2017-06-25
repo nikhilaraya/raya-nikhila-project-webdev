@@ -129,6 +129,10 @@ function findUserByCredentials(username,passowrd) {
 
 function createUser(user) {
     var deferred = q.defer();
+    if(user.username == 'admin')
+    {
+        user.admin = true;
+    }
     userModel.create(user,function (error,user) {
         if(error)
         {
