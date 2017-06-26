@@ -2,12 +2,12 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-text pull-left">
-            <a class="white-hyperlinks" href="#/moviedefault">
+            <a class="white-hyperlinks addYellow" href="#/moviedefault">
                 <span class="glyphicon glyphicon-chevron-left"></span>
             </a>
         </div>
         <div class="navbar-text pull-right">
-            <a class="white-hyperlinks" href="#/profile">
+            <a class="white-hyperlinks addYellow" href="#/profile">
                 <span class="glyphicon glyphicon-user"></span>
             </a>
         </div>
@@ -21,7 +21,7 @@
 <div class="container adjustPaddingForHeader bottomAdminPadding">
     <div class="register-margin"></div>
     <div class="col-md-2"></div>
-    <div class="col-xs-12 col-md-8">
+    <div class="col-xs-12 col-md-8 mobilePadding">
         <div class="input-group">
             <input ng-model = "model.movieName"
                    type="text"
@@ -29,9 +29,9 @@
                    class="form-control ng-pristine ng-valid ng-touched">
                 <span class="input-group-btn ">
                    <a href ="#/search/{{model.movieName}}"
-                      class="btn btn-info searchButtonColor"
+                      class="btn btn-info buttoncolor-adminbtn"
                       type="button">
-                       <span class="glyphicon glyphicon-search"></span>
+                       <span class="glyphicon glyphicon-search buttoncolor-adminbtn"></span>
                    </a>
                 </span>
         </div>
@@ -61,7 +61,7 @@
         </p>
         <p class="navbar-text pull-right">
             <a  class="mycustomfont" ng-click="model.logout()">
-                <span class="glyphicon glyphicon-off white-links"></span>
+                <span class="glyphicon glyphicon-off addYellow"></span>
             </a>
         </p>
     </div>

@@ -20,7 +20,7 @@
 <div class="container adjustPaddingForHeader  bottomRegisterPadding">
     <div class="register-margin"></div>
         <div class="col-md-2"></div>
-        <div class="col-xs-12 col-md-8">
+        <div class="col-xs-12 col-md-8 mobilePadding">
         <div ng-if="model.error"
              class="alert alert-danger">
             {{model.error}}
@@ -76,12 +76,12 @@
                    type="password"
                    class="form-control"
                    required/>
-            <button class="btn btn-primary btn-block btn-color btn-margin-bottom"
+            <button class="btn btn-primary btn-block btn-color btn-margin-bottom addYellow"
                     ng-click="model.register(username, password, vpassword, firstName, lastName)"
                     type="submit">Sign Up</button>
         </form>
 
-        <a class="btn btn-danger btn-block btn-color"
+        <a class="btn btn-danger btn-block btn-color addYellow"
            href="#/login">Cancel</a>
     </div>
 </div>

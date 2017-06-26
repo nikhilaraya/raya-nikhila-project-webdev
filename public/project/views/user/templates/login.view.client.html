@@ -20,7 +20,7 @@
     <div class="container adjustPaddingForHeader bottomPadding">
         <div class="login-margin"></div>
         <div class="col-md-2"></div>
-        <div class="col-xs-12 col-md-8">
+        <div class="col-xs-12 col-md-8 mobilePadding">
         <div ng-show="model.error" class="alert alert-danger" role="alert">
             {{model.error}}
         </div>
@@ -32,7 +32,7 @@
                        ng-model="username"
                        id="username"
                        required
-                       class="form-control"
+                       class="form-control fullLength"
                        name="username"
                        placeholder="alice">
                 <span class="alert-class subHeadingStyle" ng-show="model.loginForm.username.$invalid">{{model.alert}}</span>
@@ -43,7 +43,7 @@
                        ng-model="password"
                        id="password"
                        required
-                       class="form-control"
+                       class="form-control fullLength"
                        name="password"
                        placeholder="alice@123">
                 <span class="alert-class subHeadingStyle" ng-show="model.loginForm.password.$invalid">{{model.alert}}</span>

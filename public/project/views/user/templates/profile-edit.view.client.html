@@ -1,12 +1,12 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-text pull-left">
-            <a class="white-hyperlinks" href="#/moviedefault">
+            <a class="white-hyperlinks addYellow" href="#/moviedefault">
                 <span class="glyphicon glyphicon-chevron-left"></span>
             </a>
         </div>
         <div class="navbar-text pull-right">
-            <a class="white-hyperlinks" href="#/profile">
+            <a class="white-hyperlinks addYellow" href="#/profile">
                 <span class="glyphicon glyphicon-user"></span>
             </a>
         </div>
@@ -16,10 +16,10 @@
     </div>
 </nav>
 
-<div class="container adjustPaddingForHeader">
+<div class="container adjustPaddingForHeader mobilePadding">
     <div class="register-margin"></div>
     <div class="col-md-2"></div>
-    <div class="col-xs-12 col-md-8">
+    <div class="col-xs-12 col-md-8 profilePadding">
         <div class="input-group">
             <input ng-model = "model.movieName"
                    type="text"
@@ -27,9 +27,9 @@
                    class="form-control ng-pristine ng-valid ng-touched">
             <span class="input-group-btn ">
                    <a href ="#/search/{{model.movieName}}"
-                      class="btn btn-info makegray"
+                      class="btn btn-info buttoncolor-adminbtn"
                       type="button">
-                       <span class="glyphicon glyphicon-search"></span>
+                       <span class="glyphicon glyphicon-search buttoncolor-adminbtn"></span>
                    </a>
                 </span>
         </div>
@@ -87,10 +87,10 @@
                        placeholder="Doe">
             </div>
         </form>
-        <a class="btn btn-primary btn-block"
+        <a class="btn btn-primary btn-block buttoncolor-adminbtn"
            ng-click="model.updateUser(model.user)">Confirm Changes</a>
-        <a ng-click = "model.logout()"class="btn btn-danger btn-block">Logout</a>
-        <a class="btn btn-danger btn-block "
+        <a ng-click = "model.logout()"class="btn btn-danger btn-block buttoncolor-adminbtn">Logout</a>
+        <a class="btn btn-danger btn-block buttoncolor-adminbtn"
            ng-click = "model.deleteUser()">Delete Account</a>
 
     </div>
@@ -99,8 +99,8 @@
 <nav class="navbar navbar-inverse navbar-fixed-bottom">
     <div class="container-fluid">
         <div class="navbar-text pull-right">
-            <a class="white-hyperlinks" ng-click="model.logout()">
-                <span class="glyphicon glyphicon-off white-links"></span>
+            <a class="white-hyperlinks addYellow" ng-click="model.logout()">
+                <span class="glyphicon glyphicon-off white-links addYellow"></span>
             </a>
         </div>
 

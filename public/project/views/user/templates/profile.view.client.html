@@ -19,7 +19,7 @@
     </div>
 </nav>
 
-<div class="container-fluid pushdown adjustPaddingForHeader">
+<div class="container-fluid pushdown adjustPaddingForHeader mobilePadding">
     <div class="container-fluid">
         <div class="input-group">
             <input ng-model = "model.movieName"
@@ -35,7 +35,7 @@
             </span>
         </div>
 
-        <div class="row">
+        <div class="row mobileMargin">
             <div class="col-xs-12 col-md-6">
                 <div class="">
                     <h3>Ratings</h3>
@@ -78,14 +78,14 @@
                 </div>
             </div>
 
-            <div class="container-fluid col-xs-9">
+            <div class="container-fluid col-xs-9 ">
                 <h3>People you follow</h3>
                 <div ng-if="model.nofollowers">
                     You have not followed anyone so far!
                 </div>
                 <div ng-repeat ="follow in model.user.follows">
                     <li>
-                        <a class="blackcolor" href ="#/user/profile/{{follow.username}}">
+                        <a class="makeBlackText" href ="#/user/profile/{{follow.username}}">
                             {{follow.username}}
                         </a>
                     </li>

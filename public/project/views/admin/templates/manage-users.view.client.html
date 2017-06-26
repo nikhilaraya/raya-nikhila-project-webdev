@@ -2,12 +2,12 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-text pull-left">
-            <a class="white-hyperlinks" href="#/adminconsole">
+            <a class="white-hyperlinks addYellow" href="#/adminconsole">
                 <span class="glyphicon glyphicon-chevron-left"></span>
             </a>
         </div>
         <div class="navbar-text pull-right">
-            <a class="white-hyperlinks" href="#/profile">
+            <a class="white-hyperlinks addYellow" href="#/profile">
                 <span class="glyphicon glyphicon-user"></span>
             </a>
         </div>
@@ -19,8 +19,8 @@
 
 <div>
 <div class="container adjustPaddingForHeader">
-    <div class="col-xs-12 col-md-8">
-        <div class="container">
+    <div class="col-xs-12 col-md-8 mobilePadding">
+        <div class="container mobilePadding">
             <div class="">
                 <div class="align-center-style">
                     <div class="btn-group  hidden-xs">
@@ -50,7 +50,7 @@
             </div>
         </div>
 
-        <div class="container ">
+        <div class="container mobilePadding">
 
             <div ng-if="model.createsuccess" class="alert alert-success">
                 {{model.createsuccess}}
@@ -86,14 +86,14 @@
                 <div class="col-md-3 col-sm-12 col-xs-12 paddedfromtop3">
 
                     <a ng-click="model.createUser(model.username, model.password, model.admin)"
-                       class="btn btn-block btn-success btn-color">Create User
+                       class="btn btn-block btn-success btn-color buttoncolor-adminbtn">Create User
                     </a>
 
                 </div>
             </div>
         </div>
         <p></p>
-    <div class="container">
+    <div class="container mobilePadding">
         <div class="table-responsive">
             <table class="table">
                 <thead class="color-heading">
@@ -130,7 +130,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container mobilePadding profilePadding">
         <h4><b>Update Role</b></h4>
         <div ng-if="model.warning" class="alert alert-warning">
             {{model.warning}}
@@ -188,8 +188,8 @@
             <p class="navbar-text pull-left">
             </p>
             <p class="navbar-text pull-right">
-                <a class="white-hyperlinks" ng-click="model.logout()">
-                    <span class="glyphicon glyphicon-off white-links"></span>
+                <a class="white-hyperlinks addYellow" ng-click="model.logout()">
+                    <span class="glyphicon glyphicon-off addYellow"></span>
                 </a>
             </p>
         </div>

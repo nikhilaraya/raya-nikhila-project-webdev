@@ -2,12 +2,12 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-text pull-left">
-            <a class="white-hyperlinks" href="#/adminconsole">
+            <a class="white-hyperlinks addYellow" href="#/adminconsole">
                 <span class="glyphicon glyphicon-chevron-left"></span>
             </a>
         </div>
         <div class="navbar-text pull-right">
-            <a class="white-hyperlinks" href="#/profile">
+            <a class="white-hyperlinks addYellow" href="#/profile">
                 <span class="glyphicon glyphicon-user"></span>
             </a>
         </div>
@@ -47,12 +47,12 @@
     </div>
 </div>
 
-<div class="container pushdown">
+<div class="container ">
     <div class="container">
         <h5><b>Total Reviews:</b> {{model.moviesCount}}</h5>
     </div>
 
-    <div class="container ">
+    <div class="container mobilePadding profilePadding">
         <div ng-if="model.error" class="alert alert-warning">
             {{model.error}}
         </div>
@@ -111,8 +111,8 @@
         <p class="navbar-text pull-left">
         </p>
         <p class="navbar-text pull-right">
-            <a  class="mycustomfont" ng-click="model.logout()">
-                <span class="glyphicon glyphicon-off white-links"></span>
+            <a  class="mycustomfont addYellow" ng-click="model.logout()">
+                <span class="glyphicon glyphicon-off mobilePadding"></span>
             </a>
         </p>
     </div>

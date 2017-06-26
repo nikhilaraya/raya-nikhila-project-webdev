@@ -2,12 +2,12 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-text pull-left">
-            <a class="white-hyperlinks" href="#/adminconsole">
+            <a class="white-hyperlinks addYellow" href="#/adminconsole">
                 <span class="glyphicon glyphicon-chevron-left"></span>
             </a>
         </div>
         <div class="navbar-text pull-right">
-            <a class="white-hyperlinks" href="#/profile">
+            <a class="white-hyperlinks addYellow" href="#/profile">
                 <span class="glyphicon glyphicon-user"></span>
             </a>
         </div>
@@ -21,12 +21,26 @@
 <div class="container adjustPaddingForHeader">
     <div class="">
         <div class="align-center-style">
-            <div class="btn-group">
+            <div class="btn-group hidden-xs">
                 <a class="btn btn-success buttoncolor-adminbtn btn-margin-bottom"
                    href="#/manageusers">Manage Users
                 </a>
                 <a class="btn btn-success buttoncolor-admin btn-margin-bottom"
                    href="#/managemovies">Manage Movies
+                </a>
+                <a class="btn btn-success buttoncolor-adminbtn btn-margin-bottom"
+                   href="#/managecritics">Manage critics
+                </a>
+            </div>
+            <div class="btn-group-vertical vertical-xs">
+                <a class="btn btn-success buttoncolor-adminbtn btn-margin-bottom"
+                   href="#/manageusers">Manage Users
+                </a>
+                <a class="btn btn-success buttoncolor-admin btn-margin-bottom"
+                   href="#/managemovies">Manage Movies
+                </a>
+                <a class="btn btn-success buttoncolor-adminbtn btn-margin-bottom"
+                   href="#/managecritics">Manage critics
                 </a>
             </div>
         </div>
@@ -87,7 +101,7 @@
         <p class="navbar-text pull-right">
 
             <a  class="mycustomfont" ng-click="model.logout()">
-                <span class="glyphicon glyphicon-off white-links"></span>
+                <span class="glyphicon glyphicon-off white-links addYellow"></span>
             </a>
         </p>
 

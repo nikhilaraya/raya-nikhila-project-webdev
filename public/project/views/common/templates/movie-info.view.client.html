@@ -104,7 +104,7 @@
                 {{model.notLoggedInError}}
             </div>
 
-            <a ng-if="model.notloggedIn" class="btn btn-success btn-block"
+            <a ng-if="model.notloggedIn" class="btn btn-success btn-block buttoncolor-adminbtn"
                ng-click="model.giveError()">Rate and Review this movie</a>
 
 
@@ -153,10 +153,10 @@
 <nav class="navbar navbar-inverse navbar-fixed-bottom">
     <div class="container-fluid">
         <p class="navbar-text pull-left">
-            <a ng-if="model.loggedIn" class="mycustomfont" ng-click="model.logout()">
+            <a ng-if="model.loggedIn" class="mycustomfont addYellow" ng-click="model.logout()">
                 <span class="glyphicon glyphicon-off addYellow"></span></a>
 
-            <a ng-if="model.notloggedIn" class="mycustomfont"
+            <a ng-if="model.notloggedIn" class="mycustomfont addYellow"
                href="#/login">
                 <span><b>Login</b></span>
             </a>
@@ -165,7 +165,7 @@
             <a ng-if="model.loggedIn" class="mycustomfont" href="#/profile">
                 <span class="glyphicon glyphicon-user addYellow"></span>
             </a>
-            <a ng-if="model.notloggedIn" class="mycustomfont"
+            <a ng-if="model.notloggedIn" class="mycustomfont addYellow"
                href="#/register">
                 <span><b>Sign Up</b></span>
             </a>

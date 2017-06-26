@@ -174,7 +174,10 @@ body {
     background-color: #fed136 !important;
 }
 .adjustPaddingForFooter{
-    padding-bottom: 230px;
+    padding-bottom: 50px;
+}
+.mobileMargin{
+    margin-bottom: 50px;
 }
 .adjustMovieInfoHeader{
     margin-bottom: 30px;
@@ -336,5 +339,18 @@ a:hover{
 @media only screen and (max-width: 768px) {
     .padding-left-header{
         padding-left: 0px !important;
+    }
+    .homepageMargin{
+        margin-top: 30px;
+    }
+    .fullLength{
+        width: 100%;
+    }
+    .mobilePadding{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .profilePadding{
+        padding-bottom: 30px;
     }
 }
