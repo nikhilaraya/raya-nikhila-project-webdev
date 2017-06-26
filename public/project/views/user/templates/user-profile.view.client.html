@@ -1,17 +1,17 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-text pull-left">
-            <a class="white-hyperlinks" href="#/moviedefault">
-                <span class="glyphicon glyphicon-chevron-left"></span>
+            <a class="white-hyperlinks addYellow" href="#/moviedefault">
+                <span class="glyphicon glyphicon-chevron-left addYellow"></span>
             </a>
         </div>
         <div class="navbar-text pull-right">
             <a ng-if="model.admin" class="set-glyphicon-margin" href="#/adminconsole">
-                <span class="fa fa-lg fa-user-secret admin" aria-hidden="true"></span>
+                <span class="fa fa-lg fa-user-secret admin addYellow" aria-hidden="true"></span>
             </a>
             <a>  </a>
             <a ng-if="model.user" class="mycustomfont" href="#/profile">
-                <span class="glyphicon glyphicon-home" aria-hidden="true"> </span></a>
+                <span class="glyphicon glyphicon-home addYellow" aria-hidden="true"> </span></a>
         </div>
         <div>
             <a class="navbar-brand headingStyle" href="#/Profile">Profile</a>
@@ -128,13 +128,12 @@
     <div class="container-fluid">
         <p class="navbar-text pull-left">
             <a class="mycustomfont" ng-click="model.logout()">
-                <span class="glyphicon glyphicon-off"></span></a>
+                <span class="glyphicon glyphicon-off addYellow"></span></a>
         </p>
         <p class="navbar-text pull-right">
-            <a class="mycustomfont" href="#/editprofile">
-                <span class="glyphicon glyphicon-user">Edit</span>
+            <a class="mycustomfont addYellow" href="#/editprofile">
+                <span class="glyphicon glyphicon-pencil addYellow"></span>
             </a>
-
         </p>
     </div>
 </nav>

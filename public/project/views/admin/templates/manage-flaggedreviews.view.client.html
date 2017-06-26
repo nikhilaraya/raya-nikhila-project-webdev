@@ -32,7 +32,7 @@
                    href="#/managecritics">Manage critics
                 </a>
             </div>
-            <div class="btn-group-vertical vertical-xs">
+            <div class="btn-group-vertical visible-xs">
                 <a class="btn btn-success buttoncolor-adminbtn btn-margin-bottom"
                    href="#/manageusers">Manage Users
                 </a>
@@ -67,24 +67,24 @@
             <tr ng-if= "review.visible=='true' && review.flagged=='true'">
                 <td >
                     <span class="glyphicon glyphicon-user ">
-                        <a class="makeblack"
+                        <a class="makeBlackText"
                            href="#/user/profile/{{review.username}}">
                        {{review.username}}</a></span>
                 </td>
                 <td>
                     <span>
-                        <a class="makeblack"
+                        <a class="makeBlackText"
                            href="#/movie/{{review.tmdbId}}">
                        {{review.title}}</a></span>
                 </td>
                 <td>{{review.text}}</td>
                 <td><a  type="button" ng-click="model.removeReview(review._id, review.tmdbId)"
-                        class=" reportbutton btn btn-default btn-sm">
-                    <span class="glyphicon glyphicon-remove "> Remove</span>
+                        class="btn btn-default makeBlackText borderNone">
+                    <span class="glyphicon glyphicon-remove"></span>
                 </a>
                     <a  type="button" ng-click="model.donotremoveReview(review._id, review.tmdbId)"
-                        class=" reportbutton btn btn-default btn-sm">
-                        <span class="glyphicon glyphicon-ok "> Keep </span>
+                        class=" btn btn-default makeBlackText borderNone">
+                        <span class="glyphicon glyphicon-ok "></span>
                     </a>
                 </td>
             </tr>
