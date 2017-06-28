@@ -123,18 +123,29 @@ li.w92 img {
     background-size: cover;
     background-repeat: no-repeat;
     background-position-x: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+
+
 }
 .adminBackground{
     background-image: url("../images/up-wide.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position-x: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
 }
 .registerBackground{
     background-image: url("../images/minionsD.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position-x: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
 }
 .plainBackground{
     background-image: url("../images/angrybird.jpg");
